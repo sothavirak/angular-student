@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en-US" ng-app="studentApp" ng-controller="studentController">
-	<head>
-		<title>Sample Angular App + Bootstrap</title>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
-</head>
+    <head>
+        <title>
+            Sample Angular App + Bootstrap
+        </title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    </head>
     <body>
         <div class="jumbotron text-center">
             <h1>
                 Sample Angular App + Bootstrap
             </h1>
-           
         </div>
+
         <div class="container">
+            <h2 class="display-heading-2">Student Listing</h2>
+
+            <hr class="triband-hr mt-5 mb-0" style="height:1px;margin:40px 0;clear:both;background-image:-webkit-linear-gradient(left, #b8e1ff 33.3333%, #fcd2c5 33.3333%, #fcd2c5 66.6666%, #e0c5eb 66.6666%);background-image:linear-gradient(to right, #b8e1ff 33.3333%, #fcd2c5 33.3333%, #fcd2c5 66.6666%, #e0c5eb 66.6666%);border:0"/>
+
             <div class="row">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Age
-                            </th>
-                            <th>
-                                Gender
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="student in studentList">
-                            <td>
-                                {{ student.name }}
-                            </td>
-                            <td>
-                                {{ student.age }}
-                            </td>
-                            <td>
-                                {{ student.gender }}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="col-md-8">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Age
+                                </th>
+                                <th>
+                                    Gender
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="student in studentList">
+                                <td>
+                                    {{ student.name }}
+                                </td>
+                                <td>
+                                    {{ student.age }}
+                                </td>
+                                <td>
+                                    {{ student.gender }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <dl>
+                        <dd>
+                            <input type="text" class="form-control form-control-lg input-block" placeholder="Name" ng-model="student.name"/>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <input type="number" min="0" max="100" class="form-control form-control-lg input-block" placeholder="Age" ng-model="student.age"/>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <input type="text" class="form-control form-control-lg input-block" placeholder="Gender" ng-model="student.gender"/>
+                        </dd>
+                    </dl>
+                    <button class="btn btn-success btn-block" ng-click="addStudent(student)">Register</button>
+                    <button class="btn btn-danger btn-block" ng-click="reset()">Reset</button>
+                </div>
             </div>
+
+            <hr class="triband-hr mt-5 mb-0" style="height:1px;margin:40px 0;clear:both;background-image:-webkit-linear-gradient(left, #b8e1ff 33.3333%, #fcd2c5 33.3333%, #fcd2c5 66.6666%, #e0c5eb 66.6666%);background-image:linear-gradient(to right, #b8e1ff 33.3333%, #fcd2c5 33.3333%, #fcd2c5 66.6666%, #e0c5eb 66.6666%);border:0"/>
         </div>
+
         <script src="lib/angular/js/angular.min.js"></script>
         <script src="js/student.js"></script>
         <script src="js/student-controller.js"></script>

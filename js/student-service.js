@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('student.service', [])
 
 .service('studentService', function() {
@@ -26,7 +28,7 @@ angular.module('student.service', [])
 	];
 
 	this.getStudentList = function() {
-			return studentList;
+		return studentList;
 	};
 	
 });
